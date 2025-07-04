@@ -1,0 +1,13 @@
+- name: Deploy
+  hosts: all
+  tasks:
+    - name: Copy docker compose
+      ansible.builtin.copy:
+        src: ./docker-compose.yml
+        dest: ~/docker/apps/fastify-example/docker-compose.yml
+
+    - name: Run docker compose laravel example
+      community.docker.docker_compose_v2:
+        project_src: ~/docker/apps/fastify-example
+        state: present
+        pull: always

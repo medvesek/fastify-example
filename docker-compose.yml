@@ -1,0 +1,18 @@
+services:
+  node_app:
+    image: nodeimagt
+    expose:
+      - 80
+    networks:
+      - default
+      - traefik-net
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.laravel_example.rule=Host(`fastify-example.ajmuht.eu`)"
+      - "traefik.http.routers.laravel_example.entrypoints=websecure"
+      - "traefik.http.routers.laravel_example.tls.certresolver=le"
+      - "traefik.http.services.laravel_example.loadbalancer.server.port=80"
+
+networks:
+  traefik-net:
+    external: true
