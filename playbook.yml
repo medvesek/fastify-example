@@ -1,6 +1,11 @@
 - name: Deploy
   hosts: all
   tasks:
+    - name: ensures dir exists
+      file:
+        path: "~/docker/apps/fastify-example"
+        state: directory
+
     - name: Copy docker compose
       ansible.builtin.copy:
         src: ./docker-compose.yml
