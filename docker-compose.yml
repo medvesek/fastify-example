@@ -8,10 +8,10 @@ services:
       - traefik-net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.laravel_example.rule=Host(`fastify-example.ajmuht.eu`)"
-      - "traefik.http.routers.laravel_example.entrypoints=websecure"
-      - "traefik.http.routers.laravel_example.tls.certresolver=le"
-      - "traefik.http.services.laravel_example.loadbalancer.server.port=80"
+      - "traefik.http.routers.fastify_example.rule=Host(`fastify-example.ajmuht.eu`)"
+      - "traefik.http.routers.fastify_example.entrypoints=websecure"
+      - "traefik.http.routers.fastify_example.tls.certresolver=le"
+      - "traefik.http.services.fastify_example.loadbalancer.server.port=80"
 
 networks:
   traefik-net:
