@@ -1,6 +1,6 @@
 services:
   node_app:
-    image: nodeimagt
+    image: ghcr.io/fastify-example:latest
     expose:
       - 80
     networks:
