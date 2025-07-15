@@ -5,7 +5,7 @@ const port = 80;
 
 // Declare a route
 fastify.get("/", async function handler(request, reply) {
-  return { status: "ok" };
+  return { status: "new" };
 });
 
 // Run the server!
