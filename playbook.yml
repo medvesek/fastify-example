@@ -16,4 +16,4 @@
         state: present
         name: fastify-example
         compose:
-          - /root/docker/apps/fastify-example
+          - /root/docker/apps/fastify-example/docker-compose.yml
